@@ -17,6 +17,7 @@ jobs:
     working_directory: ~/dockerized
 
     steps:
+      - setup_remote_docker
       - checkout
 
       # Download and cache dependencies
@@ -27,6 +28,12 @@ jobs:
           - v1-dependencies-
 
       - run: yarn install
+      - run:
+        name: Install Docker Compose
+        command: |
+            set -x
+            curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
+            chmod +x /usr/local/bin/docker-compose
 
       - save_cache:
           paths:
