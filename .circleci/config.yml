@@ -28,8 +28,7 @@ jobs:
           - v1-dependencies-
 
       - run:
-        name: Install Docker Compose
-        command: |
+          command: |
             yarn install
             set -x
             curl -L https://github.com/docker/compose/releases/download/1.11.2/docker-compose-`uname -s`-`uname -m` > /usr/local/bin/docker-compose
