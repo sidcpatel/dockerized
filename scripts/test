@@ -1,3 +1,4 @@
 #!/bin/bash
 
 echo "Hello, world!"
+curl http://0.0.0.0:3000/
