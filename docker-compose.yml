@@ -1,0 +1,10 @@
+app:
+  build: .
+  container_name: app_container
+  environment:
+    - RAILS_ENV=test
+    - IN_DOCKER=true
+  expose:
+    - "3000"
+  ports:
+    - "3000:3000"
